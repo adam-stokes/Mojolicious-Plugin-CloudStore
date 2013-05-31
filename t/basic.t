@@ -4,11 +4,12 @@ use Test::More;
 use Mojolicious::Lite;
 use Test::Mojo;
 
-plugin 'CloudStore';
+plugin('CloudStore' =>
+      {apikey => 'wutwut', apisecret => 'hola', provider => 's3'});
 
 get '/' => sub {
-  my $self = shift;
-  $self->render(text => 'Hello Mojo!');
+    my $self = shift;
+    $self->render(text => 'Hello Mojo!');
 };
 
 my $t = Test::Mojo->new;

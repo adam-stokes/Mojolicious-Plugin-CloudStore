@@ -12,7 +12,7 @@ has 'bucket';
 
 sub save {
     my $self = shift;
-    my $img = shift;
+    my $img  = shift;
     pp($self);
 }
 
